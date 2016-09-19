@@ -2,8 +2,11 @@
 # coding: utf-8
 
 import urllib2,os
+import utils
+
+currdir = os.path.dirname(os.path.abspath(__file__)) + '/'
 testzippath = os.path.dirname(os.path.abspath(__file__)) + '/../data/testzip/'
-os.makedirs(testzippath)
+utils.mkdirs(testzippath)
 
 def getDataDirect(fsubset):
     with open(fsubset, 'r') as f:
@@ -43,7 +46,7 @@ def getDataDirect(fsubset):
 
 
 def main():
-    getDataDirect('test.txt')
+    getDataDirect(currdir + 'test.txt')
 
 if __name__ == "__main__":
     main()
