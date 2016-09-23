@@ -1,7 +1,10 @@
 
 # coding: utf-8
 
-import urllib2,os,utils
+import urllib2,os
+import utils
+
+currdir = os.path.dirname(os.path.abspath(__file__)) + '/'
 datapath = os.path.dirname(os.path.abspath(__file__)) + '/../data/'
 trainzipfolder = 'trainzip/'
 validationzipfolder = 'validationzip/'
@@ -58,7 +61,7 @@ def getDataDirect(fsubset):
 
 
 def main():
-    getDataDirect('train_val.txt')
+    getDataDirect(currdir + 'train_val.txt')
 
 if __name__ == "__main__":
     main()
