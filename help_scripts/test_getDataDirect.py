@@ -1,9 +1,9 @@
 
 # coding: utf-8
 
-import urllib2,os
+import urllib2,os,utils 
 testzippath = os.path.dirname(os.path.abspath(__file__)) + '/../data/testzip/'
-os.makedirs(testzippath)
+utils.mkdirs(testzippath)
 
 def getDataDirect(fsubset):
     with open(fsubset, 'r') as f:

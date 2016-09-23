@@ -1,12 +1,12 @@
 
 # coding: utf-8
 
-import urllib2,os
+import urllib2,os,utils
 datapath = os.path.dirname(os.path.abspath(__file__)) + '/../data/'
 trainzipfolder = 'trainzip/'
 validationzipfolder = 'validationzip/'
-os.makedirs(datapath + trainzipfolder)
-os.makedirs(datapath + validationzipfolder)
+utils.mkdirs(datapath + trainzipfolder)
+utils.mkdirs(datapath + validationzipfolder)
 
 def getDataDirect(fsubset):
     with open(fsubset, 'r') as f:
@@ -15,23 +15,25 @@ def getDataDirect(fsubset):
         lines = f.read().splitlines()
         for url in lines:
             file_name = ''
-            if b == 1 and subset != 'validation':
+            if b >= 1 and b <= 75 and subset != 'validation':
                 file_name = datapath + trainzipfolder
                 subset = 'training'
-            elif b == 76:
+            elif b >= 76:
                 file_name = datapath + validationzipfolder
                 subset = 'validation'
                 b = 1
-            print "Downloading Batch "+str(b)
+            print "Downloading Batch "+str(b) 
             print "From URL "+url
             if len(str(b)) > 1:
                 file_name = file_name+subset+"80_"+str(b)+".zip"
             else:
                 file_name = file_name+subset+"80_0"+str(b)+".zip"
+                
             if os.path.isfile(file_name):
                 print "File "+file_name+" already exists. Skipping ..."
             else:
                 u = urllib2.urlopen(url)
+                print file_name
                 batchfile = open(file_name, 'wb')      
                 meta = u.info()
                 file_size = int(meta.getheaders("Content-Length")[0])
