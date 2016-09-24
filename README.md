@@ -66,3 +66,15 @@ After preprocessing, there will be 4 new folders created under "data" folder nam
 --> in commandline, go to "src" folder,
 --> execute "th doall.lua"
 
+if you use our code, please cite the paper as below:
+
+```
+@inproceedings{baltru2016openface,
+  title={Bi-modal First Impressions Recognition using Temporally Ordered Deep Audio and Stochastic Visual Features},
+  author={Arulkumar Subramaniam, Vismay Patel, Ashish Mishra, Prashanth Balasubramanian, Anurag Mittal},
+  booktitle={ European Conference on Computer Vision (ECCV) Workshop - 2016 on Apparent Personality Analysis},
+  pages={-},
+  year={2016},
+  organization={ECCVW-2016}
+}
+```
