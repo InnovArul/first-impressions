@@ -11,8 +11,8 @@ import logging
 from pyAudioAnalysis import audioBasicIO
 from pyAudioAnalysis import audioFeatureExtraction
 
-rootpath = './train'
-basepath = rootpath
+basepath = ''
+currdir = os.path.dirname(os.path.abspath(__file__))
 
 ##
 # to create the parent directory (recursively if the fiolder structure is not existing already)
@@ -43,10 +43,6 @@ def extractWavFile(filepath):
             print join(filepath, anyfile)
             extractWavFile(join(filepath, anyfile))
 
-extractWavFile(basepath)
-
-basepath = rootpath + 'audio'
-sizeArray = None
 
 ##
 # extractMFCCFeatures - to extract audio features from .wav files using pyAudioAnalysis toolkit
@@ -61,17 +57,23 @@ def extractMFCCFeatures(filepath):
             destpath = path.replace(basepath + '/', basepath + 'feat/')
             mkdir_p(destpath)
             (rate, sig) = audioBasicIO.readAudioFile(filepath);
-            command = "python pyAudioAnalysis/audioAnalysis.py featureExtractionFile -i " + filepath + " -mw " + str(sig.shape[0]/float(rate)/5.5) + " -ms " +  str(sig.shape[0]/float(rate)/5.5) + " -sw 0.050 -ss 0.050 -o " + join(destpath, filename)
+            command = "python " + currdir + "/pyAudioAnalysis/audioAnalysis.py featureExtractionFile -i " + filepath + " -mw " + str(sig.shape[0]/float(rate)/5.5) + " -ms " +  str(sig.shape[0]/float(rate)/5.5) + " -sw 0.050 -ss 0.050 -o " + join(destpath, filename)
             print(command)
             subprocess.call(command, shell = True)
     else:
         allfiles = [f for f in listdir(filepath) if (f != '.' and f != '..')]
         for anyfile in allfiles:
             extractMFCCFeatures(join(filepath, anyfile))
-            
-logging.basicConfig(filename=basepath+'_modifiedrate.log',level=logging.INFO)
-extractMFCCFeatures(basepath)
 
-# remove the .npy, .wav_st.csv files
-subprocess.call("rm -f " + rootpath + "audiofeat/*/*.npy", shell=True)
-subprocess.call("rm -f " + rootpath + "audiofeat/*/*.wav_st.csv", shell=True)
+
+def audioPreprocess(rootpath):
+	basepath = rootpath            
+	extractWavFile(basepath)
+	basepath = rootpath + 'audio'
+	sizeArray = None
+	logging.basicConfig(filename=basepath+'_modifiedrate.log',level=logging.INFO)
+	extractMFCCFeatures(basepath)
+
+	# remove the .npy, .wav_st.csv files
+	subprocess.call("rm -f " + rootpath + "audiofeat/*/*.npy", shell=True)
+	subprocess.call("rm -f " + rootpath + "audiofeat/*/*.wav_st.csv", shell=True)
