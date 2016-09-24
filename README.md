@@ -18,7 +18,7 @@ try "sudo apt-get install ffmpeg"
 
 2. python 2.7 (<--tested) (or above) 
 
-######additional packages needed:
+additional packages needed:
 
 ```
 pip install --user eyed3
