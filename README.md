@@ -27,14 +27,14 @@ pip install --user scikit-learn
 pip install --user progressbar
 ```
 
-3. spftware installations for preparing OpenFace executable
+3. Software installations for preparing OpenFace executable
 Installation: https://github.com/TadasBaltrusaitis/OpenFace/wiki/Unix-Installation
 
    - make sure that open face is installed in the folder "OpenFace" of same directory of test files
    i.e., open face should be built and the file "FeatureExtraction" should 
    be available in the folder "data/OpenFace/build/bin"
 
-5. Torch7
+4. Torch7
 Installation: http://torch.ch/docs/getting-started.html
 
 
@@ -48,7 +48,7 @@ Installation: http://torch.ch/docs/getting-started.html
 ####Preprocessing steps:
 
 1. To start preprocessing of data, execute the below command
-
+--------------------------
 ```
 python setup.py
 ```
