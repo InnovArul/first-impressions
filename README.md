@@ -1,7 +1,14 @@
-# first-impressions
-The repository contains code, documentation of the code used in ChaLearn First Impressions Analysis challenge
+# first-impressions prediction
+```diff
+-the data downloading links doesn't seem to work. stay tuned for updates! 
+-or directly mail to challenge organizers (refer challenge URL)
+```
 
-###ChaLearn LAP. Apparent Personality Analysis: First Impressions
+The repository contains code, documentation of the code used in **ChaLearn First Impressions Analysis challenge (first round)**
+
+challenge URL : https://competitions.codalab.org/competitions/9181
+
+###ChaLearn LAP. Apparent Personality Analysis: First Impressions(First round)
 
 used OS: Ubuntu 14.04
 
