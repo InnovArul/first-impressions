@@ -1,8 +1,11 @@
 # first-impressions prediction
 ```diff
 -the data downloading links doesn't seem to work. stay tuned for updates! 
--or directly mail to challenge organizers (refer challenge URL)
+
 ```
+
+- the new links for data download (train, validation data): http://chalearnlap.cvc.uab.es/dataset/20/description/
+
 
 The repository contains code, documentation of the code used in **ChaLearn First Impressions Analysis challenge (first round)**
 
