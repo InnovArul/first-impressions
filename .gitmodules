@@ -1,3 +1,6 @@
 [submodule "data/OpenFace"]
 	path = data/OpenFace
 	url = https://github.com/InnovArul/OpenFace
+[submodule "data/pyAudioAnalysis"]
+	path = data/pyAudioAnalysis
+	url = https://github.com/InnovArul/pyAudioAnalysis
