@@ -33,7 +33,9 @@ def extractWavFile(filepath):
     if(isfile(filepath)):
         if(filepath.lower().endswith('.mp4')):
             path, filename = os.path.split(filepath)
-            destpath = path.replace(basepath + '/', basepath + 'audio/')
+            print(basepath)
+            destpath =  os.path.abspath(basepath) + 'audio/'
+            print(destpath)
             mkdir_p(destpath)
             command = "ffmpeg -i " + filepath + " -ab 160k -ac 2 -ar 44100 -vn " + join(destpath, filename) + ".wav"
             subprocess.call(command, shell = True)
@@ -54,7 +56,7 @@ def extractMFCCFeatures(filepath):
     if(isfile(filepath)):
         if(filepath.lower().endswith('.wav')):
             path, filename = os.path.split(filepath)
-            destpath = path.replace(basepath + '/', basepath + 'feat/')
+            destpath =  os.path.abspath(basepath) + 'feat/'
             mkdir_p(destpath)
             (rate, sig) = audioBasicIO.readAudioFile(filepath);
             command = "python " + currdir + "/pyAudioAnalysis/audioAnalysis.py featureExtractionFile -i " + filepath + " -mw " + str(sig.shape[0]/float(rate)/5.5) + " -ms " +  str(sig.shape[0]/float(rate)/5.5) + " -sw 0.050 -ss 0.050 -o " + join(destpath, filename)
@@ -67,6 +69,7 @@ def extractMFCCFeatures(filepath):
 
 
 def audioPreprocess(rootpath):
+	global basepath
 	basepath = rootpath            
 	extractWavFile(basepath)
 	basepath = rootpath + 'audio'
