@@ -598,7 +598,7 @@ prepare the video data with random indices
 function prepareVideoData(rawData, ROWS)
   
   local allMp4Names = table.getAllKeys(rawData)
-  local COLS = rawData[allMp4Names[1]--]:size(3)
+  local COLS = rawData[allMp4Names[1]]:size(3)
   local preparedWholeData = {}
   
   for index, mp4name in ipairs(allMp4Names) do
