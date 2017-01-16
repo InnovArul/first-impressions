@@ -115,9 +115,9 @@ function train()
       local inputaudio = trainAudioData[mp4name]
 
       if(not opt.LSTM) then
-        local target = trainTargets[mp4name]
+        target = trainTargets[mp4name]
       else
-        local target = torch.repeatTensor(trainTargets[mp4name] * opt.targetScaleFactor,VIDEOFEATURESROWS,1)
+        target = torch.repeatTensor(trainTargets[mp4name] * opt.targetScaleFactor,VIDEOFEATURESROWS,1)
       end
 
       if opt.type == 'double' then 
