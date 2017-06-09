@@ -78,10 +78,10 @@ After preprocessing, there will be 4 new folders created under "data" folder nam
 ```
 2. To train the model,
 --------------------------
-
+```
 --> in commandline, go to "src" folder,
 --> execute "th doall.lua"
-
+```
 if you use our code, please cite the paper as below:
 
 ```
