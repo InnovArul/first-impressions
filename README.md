@@ -9,6 +9,10 @@
 
 The repository contains code, documentation of the code used in **ChaLearn First Impressions Analysis challenge (first round)**
 
+Fact sheet : http://chalearnlap.cvc.uab.es/media/results/None/fact-sheet-evolgen.pdf
+
+Paper URL : https://drive.google.com/file/d/0B4pMIs_1zlP4YnA3WkxhTEdYSnM/view
+
 challenge URL : https://competitions.codalab.org/competitions/9181
 
 ###ChaLearn LAP. Apparent Personality Analysis: First Impressions(First round)
