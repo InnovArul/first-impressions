@@ -70,12 +70,12 @@ python setup.py
 ```
 
 After preprocessing, there will be 4 new folders created under "data" folder namely,
-
-   "data/trainaudiofeat" - training audio features
+```
+   "data/trainaudiofeat" - training audio features
    "data/validationaudiofeat" - validation audio features
    "data/trainframes" - training video features
    "data/validationframes" - validation video features
-   
+```
 2. To train the model,
 --------------------------
 
