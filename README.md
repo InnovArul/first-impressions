@@ -15,14 +15,14 @@ Paper URL : https://drive.google.com/file/d/0B4pMIs_1zlP4YnA3WkxhTEdYSnM/view
 
 challenge URL : https://competitions.codalab.org/competitions/9181
 
-###ChaLearn LAP. Apparent Personality Analysis: First Impressions(First round)
+### ChaLearn LAP. Apparent Personality Analysis: First Impressions(First round)
 
 used OS: Ubuntu 14.04
 
-####Prerequisites for execution:
+#### Prerequisites for execution:
 
 
-#####To extract audio features:
+##### To extract audio features:
 
 
 1. install ffmpeg
@@ -57,9 +57,9 @@ Installation: http://torch.ch/docs/getting-started.html
 >CUDA 7.0 or above
 
 
-###EXECUTION PROCEDURE:
+### EXECUTION PROCEDURE:
 
-####Preprocessing steps:
+#### Preprocessing steps:
 
 1. To start preprocessing of data, execute the below command
 --------------------------
